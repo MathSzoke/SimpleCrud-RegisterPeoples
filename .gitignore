@@ -1,0 +1,10 @@
+.angular/
+.vscode/
+bin/
+obj/
+node_modules/
+
+.editorconfig
+
+.idea/
+.mvn/

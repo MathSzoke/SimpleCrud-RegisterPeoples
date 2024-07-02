@@ -1,0 +1,11 @@
+<!-- src/app/components/buttons/buttons.component.html -->
+<button *ngFor="let btn of buttons" 
+        class="btn m-1"
+        [ngClass]="{'btn-primary': btn.color === 'blue', 
+                    'btn-success': btn.color === 'green', 
+                    'btn-danger': btn.color === 'red', 
+                    'btn-warning': btn.color === 'orange'}"
+        [style]="btn.style"
+        (click)="onButtonClick(btn.action)">
+  {{ btn.name }}
+</button>

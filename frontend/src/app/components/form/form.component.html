@@ -1,0 +1,70 @@
+<form (ngSubmit)="onSubmit()" class="d-flex align-items-center">
+    <div class="form-group m-1">
+      <label for="nome">Nome</label>
+      <app-input
+        class="form-control"
+        placeholder="Nome"
+        type="text"
+        [(ngModel)]="formData.nome"
+        name="nome"
+        (inputChange)="formData.nome = $event">
+      </app-input>
+    </div>
+    <div class="form-group m-1">
+      <label for="dataNasc">Data Nasc</label>
+      <app-input
+        class="form-control"
+        placeholder="Data Nasc"
+        type="date"
+        [(ngModel)]="formData.dataNasc"
+        name="dataNasc"
+        (inputChange)="formData.dataNasc = $event">
+      </app-input>
+    </div>
+    <div class="form-group m-1">
+      <label for="cpf">CPF</label>
+      <app-input
+        class="form-control"
+        placeholder="CPF"
+        type="number"
+        [maxLength]="11"
+        [(ngModel)]="formData.cpf"
+        name="cpf"
+        (inputChange)="formData.cpf = $event">
+      </app-input>
+    </div>
+    <div class="form-group m-1">
+      <label for="sexo">Sexo</label>
+      <select class="form-control" id="sexo" [(ngModel)]="formData.sexo" name="sexo">
+        <option value="M">M</option>
+        <option value="F">F</option>
+      </select>
+    </div>
+    <div class="form-group m-1">
+      <label for="altura">Altura</label>
+      <app-input
+        class="form-control"
+        placeholder="Altura"
+        type="number"
+        [maxLength]="3"
+        [(ngModel)]="formData.altura"
+        name="altura"
+        (inputChange)="formData.altura = $event">
+      </app-input>
+    </div>
+    <div class="form-group m-1">
+      <label for="peso">Peso</label>
+      <app-input
+        class="form-control"
+        placeholder="Peso"
+        type="number"
+        [(ngModel)]="formData.peso"
+        name="peso"
+        [maxLength]="3"
+        (inputChange)="formData.peso = $event">
+      </app-input>
+    </div>
+    <app-buttons
+      [buttons]="buttons">
+    </app-buttons>
+  </form>

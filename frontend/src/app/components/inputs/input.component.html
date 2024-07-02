@@ -1,0 +1,5 @@
+<input [type]="type"
+       [placeholder]="placeholder"
+       [(ngModel)]="ngModel"
+       (ngModelChange)="onInputChange($event)"
+       [attr.maxlength]="maxLength ? maxLength : null">

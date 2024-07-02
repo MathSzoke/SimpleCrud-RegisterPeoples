@@ -1,0 +1,42 @@
+<!-- src/app/components/grid/grid.component.html -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns" class="text-center">{{ column }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data">
+      <td class="text-center">
+        <input disabled [(ngModel)]="row.id" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <input [disabled]="!row.isEditing" [(ngModel)]="row.nome" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <input [disabled]="!row.isEditing" [(ngModel)]="row.dataNasc" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <input [disabled]="!row.isEditing" [(ngModel)]="row.cpf" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <input [disabled]="!row.isEditing" [(ngModel)]="row.sexo" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <input [disabled]="!row.isEditing" [(ngModel)]="row.altura" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <input [disabled]="!row.isEditing" [(ngModel)]="row.peso" class="form-control text-center" />
+      </td>
+      <td class="text-center">
+        <app-buttons
+          class="d-flex"
+          [buttons]="buttons"
+          (buttonClick)="handleActionClick($event, row)">
+        </app-buttons>
+        <button class="btn" *ngIf="row.isEditing" (click)="confirmEdit(row)">✔</button>
+        <button class="btn" *ngIf="row.isEditing" (click)="cancelEdit(row)">✖</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
